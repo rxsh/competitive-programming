@@ -117,6 +117,30 @@ void searchNumMatrix(int x[3][3], int element){
     }
 }
 
+void rotate90grades(int x[3][3]){
+
+    int left = 0;
+    int right = 2;
+
+
+    for(size_t i = 0; i<3; i++){
+        for(size_t j = 0; j<3; j++){
+            //cout << x[j][i] << " ";
+            swap(x[i][j], x[j][i]);
+
+            swap(x[i][left], x[i][right]);
+            //swap(x[0][0],x[0][2]);
+            //swap(x[1][0], x[1][2]);
+            //swap(x[2][0], x[2][2]);
+            cout << x[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+
+
+}
+
 int main(){
 
     int x[3][3] = {{1,2,3},{4,5,6},{7,8,9}};
@@ -136,6 +160,8 @@ int main(){
     diagonalMatrix(x);
     sumDiagonal(x);
     searchNumMatrix(x,9);
+
+    rotate90grades(y);
 
     return 0;
 }
